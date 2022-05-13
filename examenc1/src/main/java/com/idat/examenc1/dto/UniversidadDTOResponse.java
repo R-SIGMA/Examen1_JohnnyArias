@@ -1,10 +1,12 @@
 package com.idat.examenc1.dto;
 
+import com.idat.examenc1.model.MallaCurricular;
+
 public class UniversidadDTOResponse {
 
 	private Integer idUniversidadDTO;
 	private String universidadDTO;
-	private MallaCurricularDTOResponse mallacurricularDTO;
+	private MallaCurricular mallacurricularDTO;
 	
 	public Integer getIdUniversidadDTO() {
 		return idUniversidadDTO;
@@ -18,10 +20,10 @@ public class UniversidadDTOResponse {
 	public void setUniversidadDTO(String universidadDTO) {
 		this.universidadDTO = universidadDTO;
 	}
-	public MallaCurricularDTOResponse getMallacurricularDTO() {
+	public MallaCurricular getMallacurricularDTO() {
 		return mallacurricularDTO;
 	}
-	public void setMallacurricularDTO(MallaCurricularDTOResponse mallacurricularDTO) {
+	public void setMallacurricularDTO(MallaCurricular mallacurricularDTO) {
 		this.mallacurricularDTO = mallacurricularDTO;
 	}
 }

@@ -3,13 +3,16 @@ package com.idat.examenc1.dto;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.idat.examenc1.model.MallaCurricular;
+import com.idat.examenc1.model.Profesor;
+
 public class CursoDTORequest {
 
 	private Integer idCursoDTO;
 	private String cursoDTO;
 	private String descripcionDTO;
-	private MallaCurricularDTORequest mallacurricularDTO;
-	private List<ProfesorDTORequest> itemsProfesorDTO = new ArrayList<>();
+	private MallaCurricular mallacurricularDTO;
+	private List<Profesor> itemsProfesorDTO = new ArrayList<>();
 	
 	public Integer getIdCursoDTO() {
 		return idCursoDTO;
@@ -29,16 +32,16 @@ public class CursoDTORequest {
 	public void setDescripcionDTO(String descripcionDTO) {
 		this.descripcionDTO = descripcionDTO;
 	}
-	public MallaCurricularDTORequest getMallacurricularDTO() {
+	public MallaCurricular getMallacurricularDTO() {
 		return mallacurricularDTO;
 	}
-	public void setMallacurricularDTO(MallaCurricularDTORequest mallacurricularDTO) {
+	public void setMallacurricularDTO(MallaCurricular mallacurricularDTO) {
 		this.mallacurricularDTO = mallacurricularDTO;
 	}
-	public List<ProfesorDTORequest> getItemsProfesorDTO() {
+	public List<Profesor> getItemsProfesorDTO() {
 		return itemsProfesorDTO;
 	}
-	public void setItemsProfesorDTO(List<ProfesorDTORequest> itemsProfesorDTO) {
+	public void setItemsProfesorDTO(List<Profesor> itemsProfesorDTO) {
 		this.itemsProfesorDTO = itemsProfesorDTO;
 	}
 }
