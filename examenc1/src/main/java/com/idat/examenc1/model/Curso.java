@@ -76,14 +76,6 @@ public class Curso implements Serializable {
 		this.descripcion = descripcion;
 	}
 
-	public MallaCurricular getMallaCurricular() {
-		return mallacurricular;
-	}
-
-	public void setMallaCurricular(MallaCurricular mallacurricular) {
-		this.mallacurricular = mallacurricular;
-	}
-
 	public MallaCurricular getMallacurricular() {
 		return mallacurricular;
 	}
