@@ -19,7 +19,7 @@ import com.idat.examenc1.dto.CursoDTOResponse;
 import com.idat.examenc1.service.CursoService;
 
 @RestController
-@RequestMapping("/malla")
+@RequestMapping("/curso")
 public class CursoController {
 
 	@Autowired
@@ -31,14 +31,14 @@ public class CursoController {
 	}
 	
 	@PostMapping("/guardar")
-	public ResponseEntity<Void> guardar(@RequestBody CursoDTORequest curso){
+	public ResponseEntity<Void> guardarCurso(@RequestBody CursoDTORequest curso){
 		serv.guardarCurso(curso);
 		
 		return new ResponseEntity<Void>(HttpStatus.CREATED);
 	}
 	
 	@GetMapping("/listar/{id}")
-	public ResponseEntity<CursoDTOResponse> listarPorId(@PathVariable Integer id) {
+	public ResponseEntity<CursoDTOResponse> listarPorIdCurso(@PathVariable Integer id) {
 		CursoDTOResponse c = serv.obtenerCursoId(id);
 		
 		if(c != null)
@@ -48,8 +48,8 @@ public class CursoController {
 	}
 	
 	@PatchMapping("/editar")
-	public ResponseEntity<Void> editar(@RequestBody CursoDTORequest curso){
-		CursoDTOResponse c = serv.obtenerCursoId(curso.getIdCursoDTO());
+	public ResponseEntity<Void> editarCurso(@RequestBody CursoDTORequest curso){
+		CursoDTOResponse c = serv.obtenerCursoId(curso.getIdCurso());
 		
 		if(c != null) {
 			serv.editarCurso(curso);
@@ -60,7 +60,7 @@ public class CursoController {
 	}
 	
 	@DeleteMapping("/eliminar/{id}")
-	public ResponseEntity<Void> eliminar(@PathVariable Integer id){
+	public ResponseEntity<Void> eliminarCurso(@PathVariable Integer id){
 		CursoDTOResponse c = serv.obtenerCursoId(id);
 		
 		if(c != null) {

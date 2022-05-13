@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,7 +24,7 @@ public class Profesor implements Serializable {
 	
 	private String profesor;
 
-	@ManyToMany(mappedBy = "itemsProfesor")
+	@ManyToMany(mappedBy = "itemsProfesor", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
 	private List<Curso> itemsCurso = new ArrayList<>();
 	
 	public Profesor() {}

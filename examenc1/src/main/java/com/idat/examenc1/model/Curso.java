@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
@@ -29,15 +30,15 @@ public class Curso implements Serializable {
 	private String descripcion;
 	
 	@ManyToOne
-	@JoinColumn(name="id_malla", nullable=false,
+	@JoinColumn(name="id_malla",
 	foreignKey = @ForeignKey(foreignKeyDefinition="foreign key(id_malla) references mallacurricular(id_malla)"))
 	private MallaCurricular mallacurricular;
 
-	@ManyToMany
+	@ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
 	@JoinTable(name = "curso_profesor",
-			joinColumns = @JoinColumn(name="id_curso",nullable=false,
+			joinColumns = @JoinColumn(name="id_curso",
 					foreignKey = @ForeignKey(foreignKeyDefinition="foreign key(id_curso) references curso(id_curso)")),
-			inverseJoinColumns = @JoinColumn(name="id_profesor",nullable=false,
+			inverseJoinColumns = @JoinColumn(name="id_profesor",
 					foreignKey = @ForeignKey(foreignKeyDefinition="foreign key(id_profesor) references profesor(id_profesor)")))
 	private List<Profesor> itemsProfesor = new ArrayList<>();
 	

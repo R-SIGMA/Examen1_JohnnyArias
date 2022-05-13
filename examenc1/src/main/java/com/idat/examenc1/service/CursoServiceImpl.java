@@ -21,11 +21,11 @@ public class CursoServiceImpl implements CursoService {
 	public void guardarCurso(CursoDTORequest curso) {
 		Curso c = new Curso();
 		
-		c.setIdCurso(curso.getIdCursoDTO());
-		c.setCurso(curso.getCursoDTO());
-		c.setDescripcion(curso.getDescripcionDTO());
-		c.setMallacurricular(curso.getMallacurricularDTO());
-		c.setItemsProfesor(curso.getItemsProfesorDTO());
+		c.setIdCurso(curso.getIdCurso());
+		c.setCurso(curso.getCurso());
+		c.setDescripcion(curso.getDescripcion());
+		c.setMallacurricular(curso.getMallacurricular());
+		c.setItemsProfesor(curso.getItemsProfesor());
 		
 		rep.save(c);
 	}
@@ -34,11 +34,11 @@ public class CursoServiceImpl implements CursoService {
 	public void editarCurso(CursoDTORequest curso) {
 		Curso c = new Curso();
 		
-		c.setIdCurso(curso.getIdCursoDTO());
-		c.setCurso(curso.getCursoDTO());
-		c.setDescripcion(curso.getDescripcionDTO());
-		c.setMallacurricular(curso.getMallacurricularDTO());
-		c.setItemsProfesor(curso.getItemsProfesorDTO());
+		c.setIdCurso(curso.getIdCurso());
+		c.setCurso(curso.getCurso());
+		c.setDescripcion(curso.getDescripcion());
+		c.setMallacurricular(curso.getMallacurricular());
+		c.setItemsProfesor(curso.getItemsProfesor());
 		
 		rep.saveAndFlush(c);
 	}
@@ -51,14 +51,14 @@ public class CursoServiceImpl implements CursoService {
 	@Override
 	public List<CursoDTOResponse> listarCurso() {
 		List<CursoDTOResponse> list = new ArrayList<CursoDTOResponse>();
-		CursoDTOResponse c = null;
 		
 		for (Curso curso : rep.findAll()) {
-			c.setIdCursoDTO(curso.getIdCurso());
-			c.setCursoDTO(curso.getCurso());
-			c.setDescripcionDTO(curso.getDescripcion());
-			c.setMallacurricularDTO(curso.getMallacurricular());
-			c.setItemsProfesorDTO(curso.getItemsProfesor());
+			CursoDTOResponse c = new CursoDTOResponse();
+			c.setIdCurso(curso.getIdCurso());
+			c.setCurso(curso.getCurso());
+			c.setDescripcion(curso.getDescripcion());
+			c.setMallacurricular(curso.getMallacurricular());
+			c.setItemsProfesor(curso.getItemsProfesor());
 			list.add(c);
 		}
 		
@@ -70,11 +70,11 @@ public class CursoServiceImpl implements CursoService {
 		Curso curso = rep.findById(id).orElse(null);
 		
 		CursoDTOResponse c = new CursoDTOResponse();
-		c.setIdCursoDTO(curso.getIdCurso());
-		c.setCursoDTO(curso.getCurso());
-		c.setDescripcionDTO(curso.getDescripcion());
-		c.setMallacurricularDTO(curso.getMallacurricular());
-		c.setItemsProfesorDTO(curso.getItemsProfesor());
+		c.setIdCurso(curso.getIdCurso());
+		c.setCurso(curso.getCurso());
+		c.setDescripcion(curso.getDescripcion());
+		c.setMallacurricular(curso.getMallacurricular());
+		c.setItemsProfesor(curso.getItemsProfesor());
 		
 		return c;
 	}

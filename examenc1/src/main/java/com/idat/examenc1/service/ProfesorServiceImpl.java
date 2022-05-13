@@ -21,9 +21,9 @@ public class ProfesorServiceImpl implements ProfesorService {
 	public void guardarProfesor(ProfesorDTORequest profesor) {
 		Profesor p = new Profesor();
 		
-		p.setIdProfesor(profesor.getIdProfesorDTO());
-		p.setProfesor(profesor.getProfesorDTO());
-		p.setItemsCurso(profesor.getItemsCursoDTO());
+		p.setIdProfesor(profesor.getIdProfesor());
+		p.setProfesor(profesor.getProfesor());
+		p.setItemsCurso(profesor.getItemsCurso());
 		
 		rep.save(p);
 	}
@@ -32,9 +32,9 @@ public class ProfesorServiceImpl implements ProfesorService {
 	public void editarProfesor(ProfesorDTORequest profesor) {
 		Profesor p = new Profesor();
 		
-		p.setIdProfesor(profesor.getIdProfesorDTO());
-		p.setProfesor(profesor.getProfesorDTO());
-		p.setItemsCurso(profesor.getItemsCursoDTO());
+		p.setIdProfesor(profesor.getIdProfesor());
+		p.setProfesor(profesor.getProfesor());
+		p.setItemsCurso(profesor.getItemsCurso());
 		
 		rep.saveAndFlush(p);
 	}
@@ -47,12 +47,12 @@ public class ProfesorServiceImpl implements ProfesorService {
 	@Override
 	public List<ProfesorDTOResponse> listarProfesor() {
 		List<ProfesorDTOResponse> list = new ArrayList<ProfesorDTOResponse>();
-		ProfesorDTOResponse p = null;
 		
 		for (Profesor profesor : rep.findAll()) {
-			p.setIdProfesorDTO(profesor.getIdProfesor());
-			p.setProfesorDTO(profesor.getProfesor());
-			p.setItemsCursoDTO(profesor.getItemsCurso());
+			ProfesorDTOResponse p = new ProfesorDTOResponse();
+			p.setIdProfesor(profesor.getIdProfesor());
+			p.setProfesor(profesor.getProfesor());
+			p.setItemsCurso(profesor.getItemsCurso());
 			
 			list.add(p);
 		}
@@ -65,9 +65,9 @@ public class ProfesorServiceImpl implements ProfesorService {
 		Profesor profesor = rep.findById(id).orElse(null);
 		
 		ProfesorDTOResponse p = new ProfesorDTOResponse();
-		p.setIdProfesorDTO(profesor.getIdProfesor());
-		p.setProfesorDTO(profesor.getProfesor());
-		p.setItemsCursoDTO(profesor.getItemsCurso());
+		p.setIdProfesor(profesor.getIdProfesor());
+		p.setProfesor(profesor.getProfesor());
+		p.setItemsCurso(profesor.getItemsCurso());
 		
 		return p;
 	}

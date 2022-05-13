@@ -31,14 +31,14 @@ public class UniversidadController {
 	}
 	
 	@PostMapping("/guardar")
-	public ResponseEntity<Void> guardar(@RequestBody UniversidadDTORequest universidad){
+	public ResponseEntity<Void> guardarUniversidad(@RequestBody UniversidadDTORequest universidad){
 		serv.guardarUniversidad(universidad);
 		
 		return new ResponseEntity<Void>(HttpStatus.CREATED);
 	}
 	
 	@GetMapping("/listar/{id}")
-	public ResponseEntity<UniversidadDTOResponse> listarPorId(@PathVariable Integer id) {
+	public ResponseEntity<UniversidadDTOResponse> listarPorIdUniversidad(@PathVariable Integer id) {
 		UniversidadDTOResponse u = serv.obtenerUniversidadId(id);
 		
 		if(u != null)
@@ -48,8 +48,8 @@ public class UniversidadController {
 	}
 	
 	@PatchMapping("/editar")
-	public ResponseEntity<Void> editar(@RequestBody UniversidadDTORequest universidad){
-		UniversidadDTOResponse u = serv.obtenerUniversidadId(universidad.getIdUniversidadDTO());
+	public ResponseEntity<Void> editarUniversidad(@RequestBody UniversidadDTORequest universidad){
+		UniversidadDTOResponse u = serv.obtenerUniversidadId(universidad.getIdUniversidad());
 		
 		if(u != null) {
 			serv.editarUniversidad(universidad);
@@ -60,7 +60,7 @@ public class UniversidadController {
 	}
 	
 	@DeleteMapping("/eliminar/{id}")
-	public ResponseEntity<Void> eliminar(@PathVariable Integer id){
+	public ResponseEntity<Void> eliminarUniversidad(@PathVariable Integer id){
 		UniversidadDTOResponse u = serv.obtenerUniversidadId(id);
 		
 		if(u != null) {

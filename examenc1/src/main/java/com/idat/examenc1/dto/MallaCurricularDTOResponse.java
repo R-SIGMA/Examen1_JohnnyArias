@@ -8,33 +8,32 @@ import com.idat.examenc1.model.Universidad;
 
 public class MallaCurricularDTOResponse {
 
-	private Integer idMallaDTO;
-	private Integer anioDTO;
-	private Universidad universidadDTO;
-	private List<Curso> itemsCursoDTO = new ArrayList<>();
-	
-	public Integer getIdMallaDTO() {
-		return idMallaDTO;
+	private Integer idMalla;
+	private Integer anio;
+	private Universidad universidad;
+	private List<Curso> itemsCurso = new ArrayList<>();
+	public Integer getIdMalla() {
+		return idMalla;
 	}
-	public void setIdMallaDTO(Integer idMallaDTO) {
-		this.idMallaDTO = idMallaDTO;
+	public void setIdMalla(Integer idMalla) {
+		this.idMalla = idMalla;
 	}
-	public Integer getAnioDTO() {
-		return anioDTO;
+	public Integer getAnio() {
+		return anio;
 	}
-	public void setAnioDTO(Integer anioDTO) {
-		this.anioDTO = anioDTO;
+	public void setAnio(Integer anio) {
+		this.anio = anio;
 	}
-	public Universidad getUniversidadDTO() {
-		return universidadDTO;
+	public Universidad getUniversidad() {
+		return universidad;
 	}
-	public void setUniversidadDTO(Universidad universidadDTO) {
-		this.universidadDTO = universidadDTO;
+	public void setUniversidad(Universidad universidad) {
+		this.universidad = universidad;
 	}
-	public List<Curso> getItemsCursoDTO() {
-		return itemsCursoDTO;
+	public List<Curso> getItemsCurso() {
+		return itemsCurso;
 	}
-	public void setItemsCursoDTO(List<Curso> itemsCursoDTO) {
-		this.itemsCursoDTO = itemsCursoDTO;
+	public void setItemsCurso(List<Curso> itemsCurso) {
+		this.itemsCurso = itemsCurso;
 	}
 }

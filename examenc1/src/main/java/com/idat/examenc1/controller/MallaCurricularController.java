@@ -31,14 +31,14 @@ public class MallaCurricularController {
 	}
 	
 	@PostMapping("/guardar")
-	public ResponseEntity<Void> guardar(@RequestBody MallaCurricularDTORequest malla){
+	public ResponseEntity<Void> guardarMalla(@RequestBody MallaCurricularDTORequest malla){
 		serv.guardarMalla(malla);
 		
 		return new ResponseEntity<Void>(HttpStatus.CREATED);
 	}
 	
 	@GetMapping("/listar/{id}")
-	public ResponseEntity<MallaCurricularDTOResponse> listarPorId(@PathVariable Integer id) {
+	public ResponseEntity<MallaCurricularDTOResponse> listarPorIdMalla(@PathVariable Integer id) {
 		MallaCurricularDTOResponse mc = serv.obtenerMallaId(id);
 		
 		if(mc != null)
@@ -48,8 +48,8 @@ public class MallaCurricularController {
 	}
 	
 	@PatchMapping("/editar")
-	public ResponseEntity<Void> editar(@RequestBody MallaCurricularDTORequest malla){
-		MallaCurricularDTOResponse mc = serv.obtenerMallaId(malla.getIdMallaDTO());
+	public ResponseEntity<Void> editarMalla(@RequestBody MallaCurricularDTORequest malla){
+		MallaCurricularDTOResponse mc = serv.obtenerMallaId(malla.getIdMalla());
 		
 		if(mc != null) {
 			serv.editarMalla(malla);
@@ -60,7 +60,7 @@ public class MallaCurricularController {
 	}
 	
 	@DeleteMapping("/eliminar/{id}")
-	public ResponseEntity<Void> eliminar(@PathVariable Integer id){
+	public ResponseEntity<Void> eliminarMalla(@PathVariable Integer id){
 		MallaCurricularDTOResponse mc = serv.obtenerMallaId(id);
 		
 		if(mc != null) {

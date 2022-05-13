@@ -21,10 +21,10 @@ public class MallaCurricularServiceImpl implements MallaCurricularService {
 	public void guardarMalla(MallaCurricularDTORequest malla) {
 		MallaCurricular mc = new MallaCurricular();
 		
-		mc.setIdMalla(malla.getIdMallaDTO());
-		mc.setAnio(malla.getAnioDTO());
-		mc.setUniversidad(malla.getUniversidadDTO());
-		mc.setItemsCurso(malla.getItemsCursoDTO());
+		mc.setIdMalla(malla.getIdMalla());
+		mc.setAnio(malla.getAnio());
+		mc.setUniversidad(malla.getUniversidad());
+		mc.setItemsCurso(malla.getItemsCurso());
 		
 		rep.save(mc);
 	}
@@ -33,10 +33,10 @@ public class MallaCurricularServiceImpl implements MallaCurricularService {
 	public void editarMalla(MallaCurricularDTORequest malla) {
 		MallaCurricular mc = new MallaCurricular();
 		
-		mc.setIdMalla(malla.getIdMallaDTO());
-		mc.setAnio(malla.getAnioDTO());
-		mc.setUniversidad(malla.getUniversidadDTO());
-		mc.setItemsCurso(malla.getItemsCursoDTO());
+		mc.setIdMalla(malla.getIdMalla());
+		mc.setAnio(malla.getAnio());
+		mc.setUniversidad(malla.getUniversidad());
+		mc.setItemsCurso(malla.getItemsCurso());
 		
 		rep.saveAndFlush(mc);
 	}
@@ -49,13 +49,13 @@ public class MallaCurricularServiceImpl implements MallaCurricularService {
 	@Override
 	public List<MallaCurricularDTOResponse> listarMalla() {
 		List<MallaCurricularDTOResponse> list = new ArrayList<MallaCurricularDTOResponse>();
-		MallaCurricularDTOResponse mc = null;
 		
 		for (MallaCurricular malla : rep.findAll()) {
-			mc.setIdMallaDTO(malla.getIdMalla());
-			mc.setAnioDTO(malla.getAnio());
-			mc.setUniversidadDTO(malla.getUniversidad());
-			mc.setItemsCursoDTO(malla.getItemsCurso());
+			MallaCurricularDTOResponse mc = new MallaCurricularDTOResponse();
+			mc.setIdMalla(malla.getIdMalla());
+			mc.setAnio(malla.getAnio());
+			mc.setUniversidad(malla.getUniversidad());
+			mc.setItemsCurso(malla.getItemsCurso());
 			list.add(mc);
 		}
 		
@@ -67,10 +67,10 @@ public class MallaCurricularServiceImpl implements MallaCurricularService {
 		MallaCurricular malla = rep.findById(id).orElse(null);
 		
 		MallaCurricularDTOResponse mc = new MallaCurricularDTOResponse();
-		mc.setIdMallaDTO(malla.getIdMalla());
-		mc.setAnioDTO(malla.getAnio());
-		mc.setUniversidadDTO(malla.getUniversidad());
-		mc.setItemsCursoDTO(malla.getItemsCurso());
+		mc.setIdMalla(malla.getIdMalla());
+		mc.setAnio(malla.getAnio());
+		mc.setUniversidad(malla.getUniversidad());
+		mc.setItemsCurso(malla.getItemsCurso());
 		
 		return mc;
 	}

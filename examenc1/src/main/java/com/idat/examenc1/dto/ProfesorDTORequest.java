@@ -7,26 +7,25 @@ import com.idat.examenc1.model.Curso;
 
 public class ProfesorDTORequest {
 
-	private Integer idProfesorDTO;
-	private String profesorDTO;
-	private List<Curso> itemsCursoDTO = new ArrayList<>();
-	
-	public Integer getIdProfesorDTO() {
-		return idProfesorDTO;
+	private Integer idProfesor;
+	private String profesor;
+	private List<Curso> itemsCurso = new ArrayList<>();
+	public Integer getIdProfesor() {
+		return idProfesor;
 	}
-	public void setIdProfesorDTO(Integer idProfesorDTO) {
-		this.idProfesorDTO = idProfesorDTO;
+	public void setIdProfesor(Integer idProfesor) {
+		this.idProfesor = idProfesor;
 	}
-	public String getProfesorDTO() {
-		return profesorDTO;
+	public String getProfesor() {
+		return profesor;
 	}
-	public void setProfesorDTO(String profesorDTO) {
-		this.profesorDTO = profesorDTO;
+	public void setProfesor(String profesor) {
+		this.profesor = profesor;
 	}
-	public List<Curso> getItemsCursoDTO() {
-		return itemsCursoDTO;
+	public List<Curso> getItemsCurso() {
+		return itemsCurso;
 	}
-	public void setItemsCursoDTO(List<Curso> itemsCursoDTO) {
-		this.itemsCursoDTO = itemsCursoDTO;
+	public void setItemsCurso(List<Curso> itemsCurso) {
+		this.itemsCurso = itemsCurso;
 	}
 }

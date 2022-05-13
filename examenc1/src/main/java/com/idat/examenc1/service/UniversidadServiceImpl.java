@@ -21,9 +21,9 @@ public class UniversidadServiceImpl implements UniversidadService {
 	public void guardarUniversidad(UniversidadDTORequest universidad) {
 		Universidad u = new Universidad();
 		
-		u.setIdUniversidad(universidad.getIdUniversidadDTO());
-		u.setUniversidad(universidad.getUniversidadDTO());
-		u.setMallacurricular(universidad.getMallacurricularDTO());
+		u.setIdUniversidad(universidad.getIdUniversidad());
+		u.setUniversidad(universidad.getUniversidad());
+		u.setMallacurricular(universidad.getMallacurricular());
 		
 		rep.save(u);
 	}
@@ -32,9 +32,9 @@ public class UniversidadServiceImpl implements UniversidadService {
 	public void editarUniversidad(UniversidadDTORequest universidad) {
 		Universidad u = new Universidad();
 		
-		u.setIdUniversidad(universidad.getIdUniversidadDTO());
-		u.setUniversidad(universidad.getUniversidadDTO());
-		u.setMallacurricular(universidad.getMallacurricularDTO());
+		u.setIdUniversidad(universidad.getIdUniversidad());
+		u.setUniversidad(universidad.getUniversidad());
+		u.setMallacurricular(universidad.getMallacurricular());
 		
 		rep.saveAndFlush(u);
 	}
@@ -47,12 +47,12 @@ public class UniversidadServiceImpl implements UniversidadService {
 	@Override
 	public List<UniversidadDTOResponse> listarUniversidad() {
 		List<UniversidadDTOResponse> list = new ArrayList<UniversidadDTOResponse>();
-		UniversidadDTOResponse u = null;
 		
 		for (Universidad uniersidad : rep.findAll()) {
-			u.setIdUniversidadDTO(uniersidad.getIdUniversidad());
-			u.setUniversidadDTO(uniersidad.getUniversidad());
-			u.setMallacurricularDTO(uniersidad.getMallacurricular());
+			UniversidadDTOResponse u = new UniversidadDTOResponse();
+			u.setIdUniversidad(uniersidad.getIdUniversidad());
+			u.setUniversidad(uniersidad.getUniversidad());
+			u.setMallacurricular(uniersidad.getMallacurricular());
 			list.add(u);
 		}
 		
@@ -64,9 +64,9 @@ public class UniversidadServiceImpl implements UniversidadService {
 		Universidad universidad = rep.findById(id).orElse(null);
 		
 		UniversidadDTOResponse u = new UniversidadDTOResponse();
-		u.setIdUniversidadDTO(universidad.getIdUniversidad());
-		u.setUniversidadDTO(universidad.getUniversidad());
-		u.setMallacurricularDTO(universidad.getMallacurricular());
+		u.setIdUniversidad(universidad.getIdUniversidad());
+		u.setUniversidad(universidad.getUniversidad());
+		u.setMallacurricular(universidad.getMallacurricular());
 		
 		return u;
 	}

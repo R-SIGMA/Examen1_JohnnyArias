@@ -19,7 +19,7 @@ import com.idat.examenc1.dto.ProfesorDTOResponse;
 import com.idat.examenc1.service.ProfesorService;
 
 @RestController
-@RequestMapping("/malla")
+@RequestMapping("/profesor")
 public class ProfesorController {
 
 	@Autowired
@@ -31,14 +31,14 @@ public class ProfesorController {
 	}
 	
 	@PostMapping("/guardar")
-	public ResponseEntity<Void> guardar(@RequestBody ProfesorDTORequest profesor){
+	public ResponseEntity<Void> guardarProfesor(@RequestBody ProfesorDTORequest profesor){
 		serv.guardarProfesor(profesor);
 		
 		return new ResponseEntity<Void>(HttpStatus.CREATED);
 	}
 	
 	@GetMapping("/listar/{id}")
-	public ResponseEntity<ProfesorDTOResponse> listarPorId(@PathVariable Integer id) {
+	public ResponseEntity<ProfesorDTOResponse> listarPorIdProfesor(@PathVariable Integer id) {
 		ProfesorDTOResponse p = serv.obtenerProfesorId(id);
 		
 		if(p != null)
@@ -48,8 +48,8 @@ public class ProfesorController {
 	}
 	
 	@PatchMapping("/editar")
-	public ResponseEntity<Void> editar(@RequestBody ProfesorDTORequest profesor){
-		ProfesorDTOResponse p = serv.obtenerProfesorId(profesor.getIdProfesorDTO());
+	public ResponseEntity<Void> editarProfesor(@RequestBody ProfesorDTORequest profesor){
+		ProfesorDTOResponse p = serv.obtenerProfesorId(profesor.getIdProfesor());
 		
 		if(p != null) {
 			serv.editarProfesor(profesor);
@@ -60,7 +60,7 @@ public class ProfesorController {
 	}
 	
 	@DeleteMapping("/eliminar/{id}")
-	public ResponseEntity<Void> eliminar(@PathVariable Integer id){
+	public ResponseEntity<Void> eliminarProfesor(@PathVariable Integer id){
 		ProfesorDTOResponse p = serv.obtenerProfesorId(id);
 		
 		if(p != null) {

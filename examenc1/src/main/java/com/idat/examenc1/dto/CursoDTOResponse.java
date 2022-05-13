@@ -8,40 +8,39 @@ import com.idat.examenc1.model.Profesor;
 
 public class CursoDTOResponse {
 
-	private Integer idCursoDTO;
-	private String cursoDTO;
-	private String descripcionDTO;
-	private MallaCurricular mallacurricularDTO;
-	private List<Profesor> itemsProfesorDTO = new ArrayList<>();
-	
-	public Integer getIdCursoDTO() {
-		return idCursoDTO;
+	private Integer idCurso;
+	private String curso;
+	private String descripcion;
+	private MallaCurricular mallacurricular;
+	private List<Profesor> itemsProfesor = new ArrayList<>();
+	public Integer getIdCurso() {
+		return idCurso;
 	}
-	public void setIdCursoDTO(Integer idCursoDTO) {
-		this.idCursoDTO = idCursoDTO;
+	public void setIdCurso(Integer idCurso) {
+		this.idCurso = idCurso;
 	}
-	public String getCursoDTO() {
-		return cursoDTO;
+	public String getCurso() {
+		return curso;
 	}
-	public void setCursoDTO(String cursoDTO) {
-		this.cursoDTO = cursoDTO;
+	public void setCurso(String curso) {
+		this.curso = curso;
 	}
-	public String getDescripcionDTO() {
-		return descripcionDTO;
+	public String getDescripcion() {
+		return descripcion;
 	}
-	public void setDescripcionDTO(String descripcionDTO) {
-		this.descripcionDTO = descripcionDTO;
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
 	}
-	public MallaCurricular getMallacurricularDTO() {
-		return mallacurricularDTO;
+	public MallaCurricular getMallacurricular() {
+		return mallacurricular;
 	}
-	public void setMallacurricularDTO(MallaCurricular mallacurricularDTO) {
-		this.mallacurricularDTO = mallacurricularDTO;
+	public void setMallacurricular(MallaCurricular mallacurricular) {
+		this.mallacurricular = mallacurricular;
 	}
-	public List<Profesor> getItemsProfesorDTO() {
-		return itemsProfesorDTO;
+	public List<Profesor> getItemsProfesor() {
+		return itemsProfesor;
 	}
-	public void setItemsProfesorDTO(List<Profesor> itemsProfesorDTO) {
-		this.itemsProfesorDTO = itemsProfesorDTO;
+	public void setItemsProfesor(List<Profesor> itemsProfesor) {
+		this.itemsProfesor = itemsProfesor;
 	}
 }

@@ -24,7 +24,7 @@ public class Universidad implements Serializable {
 	private String universidad;
 	
 	@OneToOne
-	@JoinColumn(name = "id_malla", nullable = false, unique = true,
+	@JoinColumn(name = "id_malla", unique = true,
 	foreignKey = @ForeignKey(foreignKeyDefinition = "foreign key(id_malla) references mallacurricular(id_malla)"))
 	private MallaCurricular mallacurricular;
 	

@@ -4,26 +4,25 @@ import com.idat.examenc1.model.MallaCurricular;
 
 public class UniversidadDTOResponse {
 
-	private Integer idUniversidadDTO;
-	private String universidadDTO;
-	private MallaCurricular mallacurricularDTO;
-	
-	public Integer getIdUniversidadDTO() {
-		return idUniversidadDTO;
+	private Integer idUniversidad;
+	private String universidad;
+	private MallaCurricular mallacurricular;
+	public Integer getIdUniversidad() {
+		return idUniversidad;
 	}
-	public void setIdUniversidadDTO(Integer idUniversidadDTO) {
-		this.idUniversidadDTO = idUniversidadDTO;
+	public void setIdUniversidad(Integer idUniversidad) {
+		this.idUniversidad = idUniversidad;
 	}
-	public String getUniversidadDTO() {
-		return universidadDTO;
+	public String getUniversidad() {
+		return universidad;
 	}
-	public void setUniversidadDTO(String universidadDTO) {
-		this.universidadDTO = universidadDTO;
+	public void setUniversidad(String universidad) {
+		this.universidad = universidad;
 	}
-	public MallaCurricular getMallacurricularDTO() {
-		return mallacurricularDTO;
+	public MallaCurricular getMallacurricular() {
+		return mallacurricular;
 	}
-	public void setMallacurricularDTO(MallaCurricular mallacurricularDTO) {
-		this.mallacurricularDTO = mallacurricularDTO;
+	public void setMallacurricular(MallaCurricular mallacurricular) {
+		this.mallacurricular = mallacurricular;
 	}
 }
